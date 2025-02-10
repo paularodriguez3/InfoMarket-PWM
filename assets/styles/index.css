@@ -1,39 +1,51 @@
-* {
+*  {
     margin: 0;
     padding: 0;
 }
+
 header {
     top: 0;
-    background-color: cornflowerblue;
+    background-color: #3F72AF;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+main {
+    min-height: calc(100vh - 306px);
+    background-image: url("../images/background.jpg");
 }
 #logo-searchbar {
     display: flex;
     align-items: center;
 }
+
 #user-cart {
     display: flex;
     align-items: center;
     padding-inline: 30px;
 }
+
 #user {
     padding-right: 20px;
 }
+
 #user i {
     color: #FFFFFF;
     text-shadow: 3px 4px rgba(0, 0, 0, 0.2);
 }
+
 #nav-top {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
 }
+
 #header-logo {
     padding-top: 8px;
     padding-bottom: 5px;
     padding-inline: 5px;
 }
+
 #product-search {
     font-family: Poppins, FontAwesome, sans-serif;
     font-size: 17px;
@@ -44,20 +56,23 @@ header {
     border-radius: 5px;
     width: 50%;
 }
+
 #header-title {
     font-family: Poppins, sans-serif;
     text-decoration: none;
     font-size: 32px;
 }
+
 #header-buttons {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-around;
 }
+
 .header-button {
     font-family: "Arial Black", sans-serif;
     font-size: 15px;
-    background-color: cornflowerblue;
+    background-color: #3F72AF;
     border: none;
     color: #FFFFFF;
     padding: 7px;
@@ -65,15 +80,40 @@ header {
     margin-inline: 5px;
     text-shadow: 0 3px rgba(0, 0, 0, 0.2);
 }
+
 #menu-sales {
     background-color: red;
     border-radius: 10px;
     box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.2);
 }
+
 #cart i {
     color: #FFFFFF;
     text-shadow: 3px 4px rgba(0, 0, 0, 0.2);
 }
+
 #header-navigation {
     padding-inline: 15%;
 }
+
+body {
+}
+footer {
+    background-color: #112D4E;
+    margin-top: 40px;
+    bottom: 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+#footer-wrapper {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+}
+footer h1 {
+    font-family: Poppins, sans-serif;
+}
+#connect-with-us {
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+}
+
