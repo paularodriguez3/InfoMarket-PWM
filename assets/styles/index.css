@@ -1,4 +1,4 @@
-*  {
+* {
     margin: 0;
     padding: 0;
 }
@@ -10,9 +10,10 @@ header {
 }
 
 main {
-    min-height: calc(100vh - 306px);
-    background-image: url("../images/background.jpg");
+    min-height: calc(100vh - 266px);
+    background-image: url('../images/background.jpg')
 }
+
 #logo-searchbar {
     display: flex;
     align-items: center;
@@ -98,22 +99,25 @@ main {
 
 body {
 }
+
 footer {
     background-color: #112D4E;
-    margin-top: 40px;
     bottom: 0;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 #footer-wrapper {
     font-family: Poppins, sans-serif;
     display: flex;
     justify-content: space-evenly;
 }
+
 footer h1 {
     font-family: Poppins, sans-serif;
 }
+
 #connect-with-us {
     font-family: "Arial Black", sans-serif;
     font-size: 20px;
 }
-
+~
