@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Background image applied">
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/computer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/gaming.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/infomarket_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/infomarket_logo_mini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/refrigerator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/header/television.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/lego.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/header/background.jpg" afterDir="false" />
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Header finished and started home page">
       <change beforePath="$PROJECT_DIR$/assets/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +50,7 @@
     "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/paula/WebstormProjects/InfoMarketPWM/assets/icons/header",
+    "last_opened_file_path": "C:/Users/paula/WebstormProjects/InfoMarketPWM/assets/videos/home",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,6 +64,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\videos\home" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons\header" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM" />
@@ -99,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739202665460</updated>
-      <workItem from="1739202666548" duration="1258000" />
+      <workItem from="1739202666548" duration="1593000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
@@ -125,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739203687020</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Header finished and started home page">
+      <option name="closed" value="true" />
+      <created>1739204167539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739204167539</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +133,7 @@
     <MESSAGE value="Header first version done." />
     <MESSAGE value="Footer started." />
     <MESSAGE value="Background image applied" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background image applied" />
+    <MESSAGE value="Header finished and started home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Header finished and started home page" />
   </component>
 </project>

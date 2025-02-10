@@ -12,23 +12,28 @@ header {
 body {
     background-color: #FAFAFC;
 }
+
 main {
     min-height: calc(100vh - 266px);
 }
+
 #logo-searchbar {
     display: flex;
     align-items: center;
 }
+
 #user-cart a {
-     padding-left: 10px;
-     text-decoration: none;
- }
+    padding-left: 10px;
+    text-decoration: none;
+}
+
 #user-cart i {
     color: #323232;
     font-size: 28px;
 }
+
 #user-cart i:hover {
-    color: #000000;
+    color: #1D1D1F;
 }
 
 #nav-top {
@@ -38,27 +43,66 @@ main {
     padding-inline: 15%;
     border-bottom: 2px solid #EFEFEF;
 }
+
 main {
     align-items: center;
+    justify-content: center;
 }
+
 #ps5-controller {
-    max-width: 100%;
+    max-width: 96%;
     overflow-x: hidden;
     z-index: -1;
+    border-radius: 20px;
+    margin-inline: 2%;
 }
 #main-title {
     font-size: 72px;
 }
+
 #main-title-wrapper {
     font-family: "San Francisco", sans-serif;
     padding: 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #1D1D1F;
 }
+
 #main-description {
-    font-size: 32px;
+    font-size: 28px;
 }
+#nav-list {
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "San Francisco", sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+#nav-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "San Francisco", sans-serif;
+    font-size: 15px;
+    color: #323232;
+    border: none;
+    padding: 7px;
+    margin-inline: 5px;
+}
+#nav-list a {
+    cursor: pointer;
+}
+#nav-list li:hover {
+    color: #1D1D1F;
+}
+#nav-list i {
+    font-size: 33px;
+}
+
 #header-logo {
     padding-top: 8px;
     padding-bottom: 5px;
@@ -81,65 +125,82 @@ main {
     text-decoration: none;
     font-size: 32px;
 }
-#header-buttons {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-}
+
 #nav-bottom {
     background-color: #F5F5F7;
     padding-inline: 20%;
 }
-
-.header-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "San Francisco", sans-serif;
-    font-size: 15px;
-    color: #323232;
-    border: none;
-    padding: 7px;
-    cursor: pointer;
-    margin-inline: 5px;
-    background-color: #F5F5F7;
-}
-#menu-button i {
-    font-size: 34px;
-    padding-right: 5px;
-    vertical-align: middle;
-}
-.header-button img {
-    padding-bottom: 3px;
-}
-#phone img {
-    padding-bottom: 8px;
-}
-#fridge img {
-    padding-bottom: 8px;
-}
-.header-button:hover {
-    color: #000000;
-}
-
 body {
 }
-
 footer {
-    border-top: 2px solid #EFEFEF;
-    bottom: 0;
+    bottom: 0;;
 }
 #footer-wrapper {
     font-family: "San Francisco", sans-serif;
     display: flex;
     justify-content: space-evenly;
+    background-color: #F5F5F7;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-footer h1 {
+#footer-wrapper h1 {
     font-family: "San Francisco", sans-serif;
+    font-size: 16px;
+    padding-bottom: 6px;
+    color: #1E1E1E;
+}
+#footer-wrapper li {
+    padding-bottom: 4px;
+    text-decoration: none;
+    list-style-type: none;
+    color: #444445;
+    font-size: 16px;
+}
+#footer-wrapper i {
+    color: #444445;
+    font-size: 22px;
+}
+#footer-wrapper i:hover {
+    color: #1D1D1F;
+}
+#footer-wrapper a {
+    cursor: pointer;
+}
+#footer-wrapper a:hover {
+    color: #1D1D1F;
+}
+#footer-wrapper hr {
+    height: 130px;
+    border: 1px solid #CECECF;
 }
 #connect-with-us {
-    font-family: "Arial Black", sans-serif;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#copyright-wrapper {
+    padding-inline: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-top: 1px solid #CECECF;
+}
+#copyright-wrapper p {
+    font-family: "San Francisco", sans-serif;
+    font-size: 16px;
+    color: #6C6C6C;
+}
+#policies-list {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "San Francisco", sans-serif;
+    font-size: 16px;
+    color: #444445;
+}
+#policies-list li {
+    padding-right: 10px;
+}
+#policies-list p {
+    padding-right: 10px;
 }
