@@ -54,22 +54,21 @@ main {
     border-radius: 44px;
     margin-inline: 6%;
     background-color: #EFEFEF;
+    margin-bottom: 50px;
 }
 #main-title {
     font-size: 72px;
 }
 
 #main-title-wrapper {
-    font-family: "San Francisco", sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
     padding-inline: 6%;
-    padding-top: 4%;
     padding-bottom: 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #1D1D1F;
 }
-
 #main-description {
     font-size: 28px;
 }
