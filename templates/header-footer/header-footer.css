@@ -41,23 +41,11 @@ body {
 }
 
 main {
+    flex: 1;
     margin-top: 4%;
     align-items: center;
     justify-content: center;
     background-color: #FAFAFC;
-}
-
-#ps5-controller {
-    max-width: 88%;
-    overflow-x: hidden;
-    z-index: -1;
-    border-radius: 44px;
-    margin-inline: 6%;
-    background-color: #EFEFEF;
-    margin-bottom: 50px;
-}
-#main-title {
-    font-size: 72px;
 }
 
 #main-title-wrapper {
@@ -69,20 +57,17 @@ main {
     justify-content: space-between;
     color: #1D1D1F;
 }
-#main-description {
-    font-size: 28px;
-}
 
 #nav-list {
-     text-decoration: none;
-     list-style-type: none;
-     font-family: 'SF Pro Display', sans-serif;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     display: flex;
-     justify-content: space-around;
-     align-items: flex-end;
- }
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'SF Pro Display', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
 #nav-list li {
     display: flex;
     flex-direction: column;
@@ -227,7 +212,10 @@ footer {
 }
 
 body {
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FAFAFC;
 }
 .menu-item h1 {
     font-family: 'SF Pro Display', sans-serif;
