@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Header template fixed">
-      <change afterPath="$PROJECT_DIR$/templates/header-footer/header-footer.css" afterDir="false" />
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Add header and footer template">
+      <change afterPath="$PROJECT_DIR$/templates/footer/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/footer/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header-footer/header-footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header-footer/header-footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/header/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,6 +54,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.footer.html.executor": "Run",
     "JavaScript Debug.header-footer.html.executor": "Run",
     "JavaScript Debug.header.html.executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
@@ -72,11 +74,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paula\Desktop\ULPGC\PWM\InfoMarket-PWM\assets\icons\header" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\videos\home" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons\header" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM" />
-      <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icon" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\images" />
@@ -100,7 +102,10 @@
       <workItem from="1739202666548" duration="1593000" />
       <workItem from="1739225988353" duration="981000" />
       <workItem from="1739387597270" duration="313000" />
-      <workItem from="1739715746043" duration="3495000" />
+      <workItem from="1739715746043" duration="4295000" />
+      <workItem from="1739720116899" duration="187000" />
+      <workItem from="1739720440869" duration="6000" />
+      <workItem from="1739721815347" duration="990000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
@@ -150,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739718263488</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add header and footer template">
+      <option name="closed" value="true" />
+      <created>1739719373760</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739719373760</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +176,7 @@
     <MESSAGE value="Header finished and started home page" />
     <MESSAGE value="Header template added" />
     <MESSAGE value="Header template fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Header template fixed" />
+    <MESSAGE value="Add header and footer template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add header and footer template" />
   </component>
 </project>
