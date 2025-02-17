@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Add header and footer template">
-      <change afterPath="$PROJECT_DIR$/templates/footer/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/header/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header-footer/header-footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.js" afterDir="false" />
-    </list>
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Add header and footer template" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +52,7 @@
     "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/paula/Desktop/ULPGC/PWM/InfoMarket-PWM",
+    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -87,7 +79,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
       </set>
     </attachedChunks>
   </component>
@@ -106,6 +98,7 @@
       <workItem from="1739720116899" duration="187000" />
       <workItem from="1739720440869" duration="6000" />
       <workItem from="1739721815347" duration="990000" />
+      <workItem from="1739805314575" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
