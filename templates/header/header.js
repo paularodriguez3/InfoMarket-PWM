@@ -9,20 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btn.addEventListener('click', () => {
         if (search.classList.contains('active')) {
-            // Si el campo de búsqueda está abierto, lo cerramos
             search.classList.remove('active');
-            input.blur(); // Quita el foco del campo de búsqueda
+            input.blur();
         } else {
-            // Si el campo de búsqueda está cerrado, lo abrimos
             search.classList.add('active');
-            // Enfoca el campo de búsqueda después de un pequeño retraso
             setTimeout(() => {
                 input.focus();
-            }, 50); // Un retraso mínimo para asegurar que el campo esté visible
+            }, 50);
         }
     });
 
-    // Cerrar el campo de búsqueda si se hace clic fuera de él
     document.addEventListener('click', (event) => {
         const isClickInsideSearch = search.contains(event.target);
         if (!isClickInsideSearch && search.classList.contains('active')) {
