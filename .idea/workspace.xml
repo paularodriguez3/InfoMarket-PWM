@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Footer logo fixed">
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Search bar with more details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1739893119961" duration="609000" />
       <workItem from="1739901746210" duration="1891000" />
       <workItem from="1739908260321" duration="4000" />
-      <workItem from="1739908265482" duration="942000" />
+      <workItem from="1739908265482" duration="2170000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739805431949</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Search bar with more details">
+      <option name="closed" value="true" />
+      <created>1739909417338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739909417338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +198,7 @@
     <MESSAGE value="Header template fixed" />
     <MESSAGE value="Add header and footer template" />
     <MESSAGE value="Footer logo fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer logo fixed" />
+    <MESSAGE value="Search bar with more details" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search bar with more details" />
   </component>
 </project>
