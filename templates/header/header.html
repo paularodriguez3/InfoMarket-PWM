@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../header/header.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../header/header.js"></script>
     <title>Infomarket</title>
@@ -17,15 +18,17 @@
             <div id="logo-searchbar">
                 <a id="header-logo" href="header.html"><img src="../../assets/icons/header/infomarket_logo.png" width="92px" height="92px" alt=""></a>
             </div>
-            <div id="search-container" class="hidden">
-                <i class="fi fi-rr-search"></i>
-                <input type="text" id="search-input" placeholder="¿Qué estás buscando?">
-                <button id="close-search">×</button>
-            </div>
             <div id="user-cart">
-                <a id="search" href="header.html"><i class="fi fi-rr-search"></i></a>
-                <a id="user" href="header.html"><i class="fi fi-rr-user"></i></a>
-                <a id="cart" href="header.html"><i class="fi fi-rr-briefcase-blank"></i></a>
+                <div class="search">
+                    <input type="text" class="input" placeholder="¿Qué estás buscando?...">
+                    <button class="btn">
+                        <i class="fi fi-rr-search"></i>
+                    </button>
+                </div>
+                <div>
+                    <a id="user" href="header.html"><i class="fi fi-rr-user"></i></a>
+                    <a id="cart" href="header.html"><i class="fi fi-rr-briefcase-blank"></i></a>
+                </div>
             </div>
         </article>
         <article id="nav-bottom">
