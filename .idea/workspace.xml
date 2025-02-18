@@ -7,7 +7,6 @@
     <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Search bar with more details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +109,8 @@
       <workItem from="1739901746210" duration="1891000" />
       <workItem from="1739908260321" duration="4000" />
       <workItem from="1739908265482" duration="2170000" />
+      <workItem from="1739910890683" duration="8000" />
+      <workItem from="1739910900285" duration="452000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />

@@ -211,7 +211,7 @@ body {
     background-color: #FAFAFC;
     border: 0;
     font-size: 16px;
-    padding: 10px 20px 10px 10px; /* Padding para la lupa */
+    padding: 2px 20px 2px 10px; /* Padding para la lupa */
     height: 50px;
     width: 0; /* Ancho inicial: 0 (oculto) */
     transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
