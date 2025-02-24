@@ -8,9 +8,12 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="scripts/home/index.js"></script>
+  <script src="xlu-include-file.js"></script>
   <title>Infomarket</title>
 </head>
+
 <body>
+
 <header>
   <section id="header-navigation">
     <article id="nav-top">
@@ -94,60 +97,20 @@
 <main>
   <section id="main-title-wrapper">
     <h1 id="main-title">Infomarket</h1>
-    <h2 id="main-description">Innovación al alcance de tus manos.</h2>
+    <h2 id="main-description">Innovación al alcance de tus manos.</h2>
   </section>
   <video id="ps5-controller" autoplay muted loop>
     <source src="assets/videos/home/ps5_controller.mp4" type="video/mp4">
   </video>
 </main>
 
-<footer>
-  <section id="footer-wrapper">
-    <img src="assets/icons/header/infomarket_logo.png", width="128px", height="128px">
-    <article id="about-us">
-      <h1>Sobre nosotros</h1>
-      <ul id="about-us-list">
-        <li><a>¿Quiénes somos?</a></li>
-        <li><a>Trabaja con nosotros</a></li>
-        <li><a>Política de cookies</a></li>
-        <li><a>Política de privacidad</a></li>
-      </ul>
-    </article>
-    <article id="customer-support">
-      <h1>Apoyo al cliente</h1>
-      <ul id="support-list">
-        <li><a>Ayuda / Centro de soporte</a></li>
-        <li><a>Gestionar cuenta</a></li>
-        <li><a>Información sobre envío</a></li>
-        <li><a>Tarjetas de regalo</a></li>
-      </ul>
-    </article>
-    <hr>
-    <article id="connect-with-us">
-      <h1>Conecta con nosotros</h1>
-      <div id="social-network-wrapper">
-        <a><i class="fi fi-brands-twitter-alt-circle"></i></a>
-        <a><i class="fi fi-brands-instagram"></i></a>
-        <a><i class="fi fi-brands-facebook"></i></a>
-        <a><i class="fi fi-brands-linkedin"></i></a>
-        <a><i class="fi fi-brands-youtube"></i></a>
-      </div>
-    </article>
-  </section>
-  <section id="copyright-wrapper">
-    <p>Copyright © 2025 Infomarket Inc. Todos los derechos reservados.</p>
-    <ul id="policies-list">
-      <a><li>Política de privacidad</li></a>
-      <p>|</p>
-      <a><li>Uso de cookies</li></a>
-      <p>|</p>
-      <a><li>Condiciones de uso</li></a>
-      <p>|</p>
-      <a><li>Ventas y reembolsos</li></a>
-      <p>|</p>
-      <a><li>Avisos legales</li></a>
-    </ul>
-  </section>
-</footer>
+<footer id="footer" xlu-include-file="templates/footer/footer.html"></footer>
+
+<script>
+
+  xLuIncludeFile();
+
+</script>
 
 </body>
+</html>

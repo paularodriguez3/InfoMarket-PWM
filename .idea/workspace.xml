@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Search bar finished" />
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Search bar finished">
+      <change afterPath="$PROJECT_DIR$/xlu-include-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,11 +71,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paula\Desktop\PAULA\PWM\InfoMarket-PWM" />
       <recent name="C:\Users\paula\Desktop\ULPGC\PWM\InfoMarket-PWM\assets\icons\header" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\videos\home" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons\header" />
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\icons" />
-      <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\images" />
@@ -109,6 +113,7 @@
       <workItem from="1739910890683" duration="8000" />
       <workItem from="1739910900285" duration="892000" />
       <workItem from="1740155688414" duration="8000" />
+      <workItem from="1740413149871" duration="1670000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
