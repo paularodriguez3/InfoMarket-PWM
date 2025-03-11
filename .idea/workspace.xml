@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Shipping method added" />
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Carrousel in progress">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/home/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +76,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM",
+    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM/assets",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,11 +90,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paula\Desktop\PAULA\PWM\InfoMarket-PWM\assets" />
+      <recent name="C:\Users\paula\Desktop\PAULA\PWM\InfoMarket-PWM\assets\videos\home" />
       <recent name="C:\Users\fortn\WebstormProjects\InfoMarket-PWM\templates\client-support" />
       <recent name="C:\Users\fortn\WebstormProjects\InfoMarket-PWM\templates\about-us" />
       <recent name="C:\Users\paula\Desktop\PAULA\PWM\InfoMarket-PWM" />
-      <recent name="C:\Users\paula\Desktop\ULPGC\PWM\InfoMarket-PWM\assets\icons\header" />
-      <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\videos\home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\paula\WebstormProjects\InfoMarketPWM\assets\images" />
@@ -146,6 +151,7 @@
       <workItem from="1740742960668" duration="669000" />
       <workItem from="1740762813142" duration="3524000" />
       <workItem from="1741711737535" duration="12000" />
+      <workItem from="1741711750541" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
@@ -283,7 +289,31 @@
       <option name="project" value="LOCAL" />
       <updated>1740764031264</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Carrousel in progress">
+      <option name="closed" value="true" />
+      <created>1741711841644</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1741711841644</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Carrousel done">
+      <option name="closed" value="true" />
+      <created>1741711932065</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1741711932065</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Carrousel in progress">
+      <option name="closed" value="true" />
+      <created>1741712046848</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741712046848</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +338,8 @@
     <MESSAGE value="About us-finished" />
     <MESSAGE value="About us finished" />
     <MESSAGE value="Shipping method added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shipping method added" />
+    <MESSAGE value="Carrousel done" />
+    <MESSAGE value="Carrousel in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Carrousel in progress" />
   </component>
 </project>
