@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Shipping method added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/billing-adress/billing-adress.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/billing-adress/billing-adress.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payment-method/payment-method.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment-method/payment-method.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shipping-method/shipping-method.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shipping-method/shipping-method.css" afterDir="false" />
-    </list>
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Shipping method added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,12 +28,12 @@
     &quot;assignee&quot;: &quot;paularodriguez3&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/paularodriguez3/InfoMarket-PWM.git",
-    "accountId": "21bc2483-ed97-45fb-9308-137a12079738"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/paularodriguez3/InfoMarket-PWM.git&quot;,
+    &quot;accountId&quot;: &quot;21bc2483-ed97-45fb-9308-137a12079738&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -76,7 +71,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/paula/Desktop/ULPGC/PWM/InfoMarket-PWM",
+    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -150,6 +145,7 @@
       <workItem from="1740742950808" duration="9000" />
       <workItem from="1740742960668" duration="669000" />
       <workItem from="1740762813142" duration="3524000" />
+      <workItem from="1741711737535" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
