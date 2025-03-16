@@ -22,7 +22,7 @@ async function loadCommonTemplates() {
     await loadTemplate('shopping-info-component/shopping-info-component.html', 'shopping');
     await loadTemplate('login-component/componente-inicio-sesion.html','sign-in');
     await loadTemplate('login-component/componente-crear-cuenta.html','sign-up');
-
+    await loadTemplate('order-review-component/order-review-component.html', 'review');
 }
 
 loadCommonTemplates();
