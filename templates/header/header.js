@@ -1,4 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+function waitForElement(selector, callback) {
+    const element = document.querySelector(selector);
+    if (element) {
+        callback();
+    } else {
+        setTimeout(() => waitForElement(selector, callback), 100);
+    }
+}
+
+waitForElement("#menu-wrapper", () => {
     const menuIcon = document.querySelector('.fi-rr-menu-burger');
     const mobileMenu = document.querySelector('#menu-wrapper');
     const main = document.querySelector('main');
