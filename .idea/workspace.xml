@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Carrousel in progress">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/home/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="b991b1f5-e673-47f0-b15d-aed8705f6481" name="Changes" comment="Carrousel in progress" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +71,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM/assets",
+    "last_opened_file_path": "C:/Users/paula/Desktop/PAULA/PWM/InfoMarket-PWM",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -152,6 +147,7 @@
       <workItem from="1740762813142" duration="3524000" />
       <workItem from="1741711737535" duration="12000" />
       <workItem from="1741711750541" duration="400000" />
+      <workItem from="1742229273796" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Header first version done.">
       <option name="closed" value="true" />
