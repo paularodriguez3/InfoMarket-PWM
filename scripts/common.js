@@ -23,6 +23,7 @@ async function loadCommonTemplates() {
     await loadTemplate('login-component/componente-inicio-sesion.html','sign-in');
     await loadTemplate('login-component/componente-crear-cuenta.html','sign-up');
     await loadTemplate('order-review-component/order-review-component.html', 'review');
+    await loadTemplate('User-component/Personal-profile-component.html', 'profile');
 }
 
 loadCommonTemplates();
