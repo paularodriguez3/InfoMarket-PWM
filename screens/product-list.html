@@ -10,8 +10,8 @@
 </head>
 <body>
 
-<header id="header-2"></header>
-<nav id="header"></nav>
+<header id="header"></header>
+<nav id="nav-bar"></nav>
 
 <main>
     <section id="main-title-wrapper">
@@ -19,23 +19,15 @@
         <button id="filter-button"><i class='bx bx-filter-alt'></i> Ordenar y filtrar</button>
     </section>
     <div>
-        <div class="product-list">
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
-        </div>
-        <div class="product-list">
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
-            <div xlu-include-file="../product-component/product-component.html"></div>
+        <div id="product-grid">
+
         </div>
     </div>
 </main>
 
 <footer id="footer"></footer>
 <script src="../scripts/common.js"></script>
+<script type = "module" src="../scripts/product-list.js"></script>
 
 </body>
 </html>
