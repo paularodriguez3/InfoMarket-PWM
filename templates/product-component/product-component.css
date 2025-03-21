@@ -28,7 +28,7 @@
     overflow: hidden;
 }
 
-#price {
+.price {
     font-family: 'SF Pro Display', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
