@@ -40,3 +40,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("main-title").textContent = doc.Nombre;
     await obtenerProductos(categoria);
 });
+
+function waitForElement(selector, callback) {
+    const element = document.querySelector(selector);
+    if (element) {
+        callback();
+    } else {
+        setTimeout(() => waitForElement(selector, callback), 100);
+    }
+}
+
+waitForElement("#filter-menu-wrapper", () => {
+    const filterButton = document.querySelector('#filter-button');
+    const filterMenu = document.querySelector('#filter-menu-wrapper');
+    const applyButton = document.querySelector('#apply-button');
+
+    filterButton.addEventListener('click', function () {
+        filterMenu.classList.toggle("show-filter-menu");
+    });
+
+    applyButton.addEventListener('click', function () {
+        filterMenu.classList.toggle("show-filter-menu");
+    });
+});
