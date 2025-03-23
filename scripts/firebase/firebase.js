@@ -92,3 +92,14 @@ export const filterByFieldOnCollection = async (cole, field, filter, value) => {
     });
     return data;
 }
+
+export const obtenerURLImagen = async (rutaStorage) => {
+    try {
+        const storage = getStorage();
+        const storageRef = ref(storage, rutaStorage); // Referencia a la imagen
+        const url = await getDownloadURL(storageRef); // Obtiene la URL pública
+        return url;
+    } catch (error) {
+        console.error("Error al obtener la URL de la imagen:", error);
+    }
+}

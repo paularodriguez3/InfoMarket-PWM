@@ -1,4 +1,4 @@
-import {createDocOnCollection, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection } from "../scripts/firebase/firebase.js";
+import {createDocOnCollection, obtenerURLImagen, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection } from "../scripts/firebase/firebase.js";
 
 async function cargarComponenteProducto() {
     const response = await fetch("../templates/product-component/product-component.html");
@@ -17,23 +17,26 @@ export async function obtenerProductos(categoria) {
 
     const productos = await readCollection(categoria);
 
-    Object.entries(productos).forEach( async ([id, productoData]) => {
+    for (const [id, productoData] of Object.entries(productos)) {
 
         const productoElemento = document.importNode(template, true);
-        //const urlImagen = await obtenerURLImagen(productoData.Imagen);
 
-        //console.log(productoData.Imagen);
+        const imagen = await getImageUrl(productoData.Imagen);
 
-
-        //productoElemento.querySelector("#image").src = urlImagen;
+        productoElemento.querySelector("#image").src = imagen;
         productoElemento.querySelector("#product-name").textContent = productoData.Nombre;
-       // productoElemento.querySelector("#product-desc").textContent = productoData.Desc;
+        //productoElemento.querySelector("#product-desc").textContent = productoData.Desc;
         productoElemento.querySelector("#price").textContent = productoData.Precio;
 
         productosGrid.appendChild(productoElemento);
-    });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await obtenerProductos("productos/Informática/Ordenadores");
+    const parametros = new URLSearchParams(window.location.search);
+    const categoria = parametros.get("categoria");
+    let path = categoria.split("/");
+    let doc = await readDoc(path[0], path[1]);
+    document.getElementById("main-title").textContent = doc.Nombre;
+    await obtenerProductos(categoria);
 });
