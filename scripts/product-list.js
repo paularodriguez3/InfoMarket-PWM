@@ -1,4 +1,4 @@
-import {createDocOnCollection, obtenerURLImagen, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection } from "../scripts/firebase/firebase.js";
+import {createDocOnCollection, getImageUrl, getCategory, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection } from "../scripts/firebase/firebase.js";
 
 async function cargarComponenteProducto() {
     const response = await fetch("../templates/product-component/product-component.html");
@@ -15,7 +15,7 @@ export async function obtenerProductos(categoria) {
     const productosGrid = document.getElementById("product-grid");
     const template = document.getElementById("product-template").content;
 
-    const productos = await readCollection(categoria);
+    const productos = await getCategory(categoria);
 
     for (const [id, productoData] of Object.entries(productos)) {
 

@@ -93,13 +93,31 @@ export const filterByFieldOnCollection = async (cole, field, filter, value) => {
     return data;
 }
 
-export const obtenerURLImagen = async (rutaStorage) => {
+export const getImageUrl = async (imgName) => {
     try {
         const storage = getStorage();
-        const storageRef = ref(storage, rutaStorage); // Referencia a la imagen
-        const url = await getDownloadURL(storageRef); // Obtiene la URL pública
+        const url = await getDownloadURL(ref(storage, imgName));
         return url;
     } catch (error) {
-        console.error("Error al obtener la URL de la imagen:", error);
+        console.log("ERROR", error);
+        throw error;
     }
+}
+
+// Esta función devuelve un objeto con todos los objetos de una categoría
+export async function getCategory(document) {
+    let path = document.split("/");
+    let doc = await readDoc(path[0], path[1]);
+    let res = {}
+
+    let promises = doc.subcolecciones.map(async (subcoleccion) => {
+        let subcol = await readCollection(document + "/" + subcoleccion);
+        for (let prod in subcol) {
+            res[prod] = subcol[prod];
+        }
+    });
+
+    await Promise.all(promises);
+
+    return res;
 }
