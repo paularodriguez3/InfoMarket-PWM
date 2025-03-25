@@ -110,7 +110,7 @@ waitForElement("#sign-up", () => {
 
             try {
                 // Registro del usuario utilizando la función createUser
-                const userCredential = await createUser(email, password);
+                const userCredential = await createUser(email, password, username);
                 const user = userCredential.user;
                 alert("Usuario creado con éxito");
 

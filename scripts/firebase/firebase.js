@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getFirestore, doc, getDoc, collection, query, getDocs, addDoc, deleteDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, collection, query, getDocs, addDoc, deleteDoc, updateDoc, where, setDoc  } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 import { firebaseConfig, inicioSesion, inicioDeSesion } from "../../config.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,6 +10,8 @@ import { firebaseConfig, inicioSesion, inicioDeSesion } from "../../config.js";
 const app = initializeApp(firebaseConfig);
 const database = getFirestore(app);
 const auth = getAuth(app);
+
+export { auth, database };
 
 // Esta función lee los datos de la colección especificada y los devuelve en un objeto id : datos
 export const readCollection = async (cole) => {
@@ -92,12 +94,30 @@ export const filterByFieldOnCollection = async (cole, field, filter, value) => {
     return data;
 }
 
+export async function createUser(email, password, username) {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        await sendEmailVerification(user);
 
-// Función para el registro
-export async function createUser(email, password) {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
+        // Verifica que Firestore esté correctamente inicializado
+        if (!database) {
+            throw new Error("Firestore no está inicializado correctamente.");
+        }
+
+        // Almacenar el username y email en Firestore
+        await setDoc(doc(database, "users", user.uid), {
+            username: username,
+            email: user.email
+        });
+
+        return user;
+    } catch (error) {
+        console.error("Error al crear usuario:", error);
+        throw error; // Lanza el error para manejarlo en el frontend
+    }
 }
+
 
 export async function signIn(email, password) {
     try {
@@ -111,3 +131,18 @@ export async function signIn(email, password) {
 export async function signOut() {
     auth.signOut();
 }
+
+// Esta función actualiza el perfil del usuario
+export const updateUserProfile = async (displayName, photoURL) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (user) {
+        await updateProfile(user, {
+            displayName: displayName,
+            photoURL: photoURL
+        });
+    } else {
+        console.log("No hay usuario autenticado.");
+    }
+};

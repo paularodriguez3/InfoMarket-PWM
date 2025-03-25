@@ -37,7 +37,7 @@ async function loadCommonTemplates() {
     }
 
     if (pagina.endsWith('Personal-profile.html')) {
-        await loadTemplate('User-component/Personal-profile-component.html', 'profile');
+        await loadTemplate('User-component/Personal-profile-component.html', 'profile', '../templates/User-component/personal-profile.js');
     }
 
     if (pagina.endsWith('order-review.html')) {
