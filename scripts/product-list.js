@@ -13,22 +13,30 @@ async function cargarComponenteProducto() {
 export async function obtenerProductos(categoria) {
     await cargarComponenteProducto();
     const productosGrid = document.getElementById("product-grid");
-    const template = document.getElementById("product-template").content;
+    const plantilla = document.getElementById("product-template").content;
 
     const productos = await getCategory(categoria);
-
+    console.log(productos);
     for (const [id, productoData] of Object.entries(productos)) {
-
-        const productoElemento = document.importNode(template, true);
+        console.log(id, productoData);
+        const productoPlantilla = document.importNode(plantilla, true);
 
         const imagen = await getImageUrl(productoData.Imagen);
 
-        productoElemento.querySelector("#image").src = imagen;
-        productoElemento.querySelector("#product-name").textContent = productoData.Nombre;
-        //productoElemento.querySelector("#product-desc").textContent = productoData.Desc;
-        productoElemento.querySelector("#price").textContent = productoData.Precio;
+        productoPlantilla.querySelector("#image").src = imagen;
+        productoPlantilla.querySelector("#product-name").textContent = productoData.Nombre;
+        productoPlantilla.querySelector("#product-desc").textContent = productoData.Descripcion;
+        productoPlantilla.querySelector("#price").textContent = productoData.Precio;
 
-        productosGrid.appendChild(productoElemento);
+        const seeButton = productoPlantilla.querySelector("#see");
+
+        seeButton.addEventListener("click", () => {
+            localStorage.setItem("productoSeleccionado", JSON.stringify({ id, data: productoData }));
+            window.location.href = "../screens/product-details.html";
+            //console.log([id, productoData]);
+        });
+
+        productosGrid.appendChild(productoPlantilla);
     }
 }
 
@@ -63,3 +71,4 @@ waitForElement("#filter-menu-wrapper", () => {
         filterMenu.classList.toggle("show-filter-menu");
     });
 });
+
