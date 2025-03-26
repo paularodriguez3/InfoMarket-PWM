@@ -16,9 +16,9 @@ export async function obtenerProductos(categoria) {
     const plantilla = document.getElementById("product-template").content;
 
     const productos = await getCategory(categoria);
-    console.log(productos);
+    //console.log(productos);
     for (const [id, productoData] of Object.entries(productos)) {
-        console.log(id, productoData);
+        //console.log(id, productoData);
         const productoPlantilla = document.importNode(plantilla, true);
 
         const imagen = await getImageUrl(productoData.Imagen);
