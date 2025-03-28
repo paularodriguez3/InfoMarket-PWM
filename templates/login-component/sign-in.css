@@ -2,7 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+header {
+    top: 0;
+    background-color: #FAFAFC;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -12,6 +18,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
 
 .login-container {
     display: flex;
