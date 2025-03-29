@@ -55,21 +55,3 @@ footer {
         flex-direction: column;
     }
 }
-
-@media(max-width: 950px) {
-    #wrapper-component {
-
-    }
-}
-
-@media(max-width: 820px) {
-    #wrapper-component {
-
-    }
-}
-
-@media(max-width: 630px) {
-    #wrapper-component {
-
-    }
-}
