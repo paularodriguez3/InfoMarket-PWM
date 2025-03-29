@@ -1,5 +1,4 @@
 import {getImageUrl} from "../../scripts/firebase/firebase.js";
-console.log("hola");
 
 function waitForElement(selector, callback) {
     const element = document.querySelector(selector);

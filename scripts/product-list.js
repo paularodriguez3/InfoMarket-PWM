@@ -16,11 +16,11 @@ export async function obtenerProductos(categoria) {
     const productosGrid = document.getElementById("product-grid");
     const template = document.getElementById("product-template").content;
 
-    console.log(categoria);
+    //console.log(categoria);
 
     const productos = await getCategory(categoria);
 
-    console.log(productos);
+    //console.log(productos);
 
     for (const [id, productoData] of Object.entries(productos)) {
 

@@ -33,7 +33,6 @@ header {
 #billing-shopping-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 90%;
     gap: 5%;
     margin-top: 10px;
@@ -42,6 +41,7 @@ header {
 #billing-address {
     flex: 1;
     background-color: white;
+    height: fit-content;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -103,6 +103,7 @@ footer {
         width: 90%;
         justify-self: center;
         flex-direction: column;
+        align-items: center;
     }
     #billing-address {
         width: 80%;

@@ -1,6 +1,8 @@
 import { getImageUrl } from "./firebase/firebase.js";
 import { addToCart } from "./shopping-cart.js";
 
+let quantity= 1;
+
 document.addEventListener("DOMContentLoaded", async () => {
     const producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
     //console.log(producto.id);
@@ -24,7 +26,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     addToCartButton.addEventListener("click", () => {
         // console.log(producto);
         addToCart(producto, 1);
+    });
 
+    const plus = document.getElementById("plus");
+    plus.addEventListener("click", () => {
+        quantity++;
+        document.querySelector("#qty-value").textContent = quantity;
+        document.querySelector("#price").textContent = Math.round(parseFloat(producto.data.Precio)*quantity*100)/100;
+    });
 
+    const minus = document.getElementById("minus");
+    minus.addEventListener("click", () => {
+        if (quantity !== 1) {
+            quantity--;
+            document.querySelector("#qty-value").textContent = quantity;
+            document.querySelector("#price").textContent = Math.round(parseFloat(producto.data.Precio)*quantity*100)/100
+        }
     });
 });

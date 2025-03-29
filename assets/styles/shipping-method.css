@@ -35,7 +35,6 @@ header {
 #shipping-method-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 90%;
     gap: 5%;
     margin-top: 0;
@@ -43,6 +42,7 @@ header {
 
 #shipping-method {
     flex: 1;
+    height: fit-content;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -114,6 +114,7 @@ footer {
 @media(max-width: 1300px) {
     #shipping-method-wrapper {
         width: 90%;
+        align-items: center;
         justify-self: center;
         flex-direction: column;
     }
