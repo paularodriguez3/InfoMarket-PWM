@@ -88,6 +88,7 @@ main {
     margin-inline: 5px;
 }
 #nav-list a {
+    text-decoration: none;
     cursor: pointer;
 }
 #nav-list li:hover {
