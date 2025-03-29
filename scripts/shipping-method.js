@@ -31,4 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('Infomarket dice: "Por favor, completa al menos un campo: Dirección o Tienda física."');
         }
     });
+
+    const continueButton = document.getElementById("button");
+    continueButton.addEventListener("click", () => {
+        window.location.href = "../screens/payment-method.html";
+    });
+
 });
