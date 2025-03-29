@@ -1,4 +1,5 @@
-import {createDocOnCollection, getImageUrl, getCategory, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection } from "../scripts/firebase/firebase.js";
+import {createDocOnCollection, readCollection, readDoc, filterEqualsByFieldOnCollection, deleteDocOnCollection, updateDocOnCollection, getImageUrl, getCategory } from "./firebase/firebase.js";
+import {addToCart} from "./shopping-cart.js";
 
 async function cargarComponenteProducto() {
     const response = await fetch("../templates/product-component/product-component.html");
@@ -13,30 +14,40 @@ async function cargarComponenteProducto() {
 export async function obtenerProductos(categoria) {
     await cargarComponenteProducto();
     const productosGrid = document.getElementById("product-grid");
-    const plantilla = document.getElementById("product-template").content;
+    const template = document.getElementById("product-template").content;
+
+    console.log(categoria);
 
     const productos = await getCategory(categoria);
-    //console.log(productos);
+
+    console.log(productos);
+
     for (const [id, productoData] of Object.entries(productos)) {
-        //console.log(id, productoData);
-        const productoPlantilla = document.importNode(plantilla, true);
+
+        const productoElemento = document.importNode(template, true);
 
         const imagen = await getImageUrl(productoData.Imagen);
 
-        productoPlantilla.querySelector("#image").src = imagen;
-        productoPlantilla.querySelector("#product-name").textContent = productoData.Nombre;
-        productoPlantilla.querySelector("#product-desc").textContent = productoData.Descripcion;
-        productoPlantilla.querySelector("#price").textContent = productoData.Precio;
+        productoElemento.querySelector("#image").src = imagen;
+        productoElemento.querySelector("#product-name").textContent = productoData.Nombre;
+        productoElemento.querySelector("#product-desc").textContent = productoData.Descripcion;
+        productoElemento.querySelector("#price").textContent = productoData.Precio;
 
-        const seeButton = productoPlantilla.querySelector("#see");
+        const seeButton = productoElemento.querySelector("#see");
 
         seeButton.addEventListener("click", () => {
-            localStorage.setItem("productoSeleccionado", JSON.stringify({ id, data: productoData }));
+            localStorage.setItem("productoSeleccionado", JSON.stringify({ id, data: productoData, quantity: null}));
             window.location.href = "../screens/product-details.html";
             //console.log([id, productoData]);
         });
 
-        productosGrid.appendChild(productoPlantilla);
+        const addToCartButton = productoElemento.querySelector("#add-to-cart");
+        addToCartButton.addEventListener("click", () => {
+            const producto = { id, data: productoData, quantity: null};
+            addToCart(producto, 1);
+        });
+
+        productosGrid.appendChild(productoElemento);
     }
 }
 
@@ -71,4 +82,3 @@ waitForElement("#filter-menu-wrapper", () => {
         filterMenu.classList.toggle("show-filter-menu");
     });
 });
-
