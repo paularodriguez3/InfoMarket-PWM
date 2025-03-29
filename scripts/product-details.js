@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const addToCartButton = document.getElementById("add-to-cart");
     addToCartButton.addEventListener("click", () => {
         // console.log(producto);
-        addToCart(producto, 1);
+        addToCart(producto, quantity);
     });
 
     const plus = document.getElementById("plus");
