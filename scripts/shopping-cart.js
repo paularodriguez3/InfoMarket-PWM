@@ -53,7 +53,7 @@ async function showShoppingCart() {
         shoppingCartList.appendChild(itemComponent);
     }
     document.getElementById("total-price").innerText = Math.round(totalPrice*100)/100 + "€";
-    console.log(shoppingCart);
+    //console.log(shoppingCart);
 }
 
 export function addToCart(item, quantity) {
