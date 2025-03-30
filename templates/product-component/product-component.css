@@ -110,3 +110,7 @@
     background-color: #D9D9D9;
     color: #746F6F;
 }
+
+.product-info-link:hover {
+    cursor: pointer;
+}

@@ -36,6 +36,7 @@ export async function obtenerProductos(categoria) {
         const seeButton = productoElemento.querySelector("#see");
 
         seeButton.addEventListener("click", () => {
+            event.stopPropagation();
             localStorage.setItem("productoSeleccionado", JSON.stringify({ id, data: productoData, quantity: null}));
             window.location.href = "../screens/product-details.html";
             //console.log([id, productoData]);
@@ -43,8 +44,15 @@ export async function obtenerProductos(categoria) {
 
         const addToCartButton = productoElemento.querySelector("#add-to-cart");
         addToCartButton.addEventListener("click", () => {
+            event.stopPropagation();
             const producto = { id, data: productoData, quantity: null};
             addToCart(producto, 1);
+        });
+
+        const verProducto = productoElemento.querySelector(".product-info-link");
+        verProducto.addEventListener("click", () => {
+            localStorage.setItem("productoSeleccionado", JSON.stringify({ id, data: productoData, quantity: null}));
+            window.location.href = "../screens/product-details.html";
         });
 
         productosGrid.appendChild(productoElemento);
