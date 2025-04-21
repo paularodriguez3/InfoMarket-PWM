@@ -7,6 +7,7 @@ import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.compone
 import {ClientSupportComponent} from './pages/client-support/client-support.component';
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
 import {SignInComponent} from './pages/sign-in/sign-in.component';
+import {ProductDetailsComponent} from './pages/product-details/product-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'client-support', component: ClientSupportComponent },
   { path: 'forgotten-password', component: ForgottenPasswordComponent },
   { path: 'sign-in', component: SignInComponent },
+  { path: 'product-details', component: ProductDetailsComponent },
 ];
 
 @NgModule({
