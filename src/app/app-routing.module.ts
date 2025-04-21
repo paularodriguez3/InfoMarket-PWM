@@ -8,6 +8,8 @@ import {ClientSupportComponent} from './pages/client-support/client-support.comp
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
 import {SignInComponent} from './pages/sign-in/sign-in.component';
 import {ProductDetailsComponent} from './pages/product-details/product-details.component';
+import {SignUpComponent} from './pages/sign-up/sign-up.component';
+import {PersonalProfileComponent} from './pages/personal-profile/personal-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'forgotten-password', component: ForgottenPasswordComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'product-details', component: ProductDetailsComponent },
+  { path:  'sign-up', component: SignUpComponent },
+  { path: 'personal-profile', component: PersonalProfileComponent },
 ];
 
 @NgModule({
