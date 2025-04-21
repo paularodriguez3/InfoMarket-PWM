@@ -12,6 +12,8 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { ClientSupportComponent } from './pages/client-support/client-support.component';
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten
     ProductListComponent,
     ShoppingCartComponent,
     ClientSupportComponent,
-    ForgottenPasswordComponent
+    ForgottenPasswordComponent,
+    SignInComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
