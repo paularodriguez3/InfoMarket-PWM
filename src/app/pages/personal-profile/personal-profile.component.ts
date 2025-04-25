@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-personal-profile',
-  standalone: false,
+  standalone: true,
   templateUrl: './personal-profile.component.html',
   styleUrl: './personal-profile.component.css'
 })

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  standalone: false,
+  standalone: true,
   templateUrl: './footer.component.html',
+  imports: [RouterModule],
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {

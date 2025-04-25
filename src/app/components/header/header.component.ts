@@ -1,9 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  standalone: false,
+  standalone: true,
   templateUrl: './header.component.html',
+  imports: [RouterModule],
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
