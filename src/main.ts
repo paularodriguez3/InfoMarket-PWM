@@ -6,10 +6,18 @@ import {provideFirebaseApp, initializeApp} from '@angular/fire/app';
 import { environment } from './environments/environment.development';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 
+function isFirebaseConfigValid(config: any): boolean {
+  return config && config.apiKey && config.authDomain && config.projectId;
+}
+
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(appRoutes),
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),
+    ...(isFirebaseConfigValid(environment.firebaseConfig)
+      ? [
+        provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        provideAuth(() => getAuth())
+      ]
+      : [])
   ],
 }).catch(err => console.error(err));
