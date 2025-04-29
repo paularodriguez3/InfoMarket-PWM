@@ -14,7 +14,7 @@ import {BillingAddressComponent} from './pages/billing-address/billing-address.c
 import {OrderReviewTemplateComponent} from './components/order-review-template/order-review-template.component';
 import {PaymentMethodComponent} from './pages/payment-method/payment-method.component';
 import {ShippingMethodComponent} from './pages/shipping-method/shipping-method.component';
-import {OrderReviewComponent} from './pages/order-review/order-review.component'; // ejemplo
+import {OrderReviewComponent} from './pages/order-review/order-review.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
