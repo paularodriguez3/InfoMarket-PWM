@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-personal-profile',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './personal-profile.component.css'
 })
 export class PersonalProfileComponent {
-
+  private router: Router = inject(Router);
+    ngOnInit() {
+      if (localStorage.getItem("user") === null) {
+        this.router.navigate(['sign-in'])
+      }
+    }
 }

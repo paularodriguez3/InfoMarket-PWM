@@ -1,29 +1,54 @@
-import {inject, Injectable} from '@angular/core';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { Injectable, inject } from '@angular/core';
+import {
+  Auth,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  User
+} from '@angular/fire/auth';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private auth = inject(Auth, {optional: true});
-  constructor(private router: Router) {}
+  private auth = inject(Auth, { optional: true });
 
-  async signIn(email: string, password: string): Promise<void> {
+  constructor() {}
+
+  async signIn(email: string, password: string): Promise<any> {
     if (!this.auth) {
-      throw new Error('Firebase Auth no está inicializado.');
+        throw new Error('InfoMarket informa de que el servicio de inicio de sesión no se encuentra disponible en este momento.');
     }
+
     const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-    localStorage.setItem('currentUser', JSON.stringify(userCredential.user));
-    const userEmail = userCredential.user.email;
-    alert(`Inicio de sesión exitoso, bienvenido ${userEmail}`);
-    this.router.navigate(['/personal-profile']);
+    localStorage.setItem("user", JSON.stringify(userCredential.user));
+    return userCredential.user;
   }
 
-  isLoggedIn(): boolean {
-    return localStorage.getItem('currentUser') !== null;
+  async registerUser(email: string, password: string, displayName: string): Promise<User> {
+    if (!this.auth) {
+      throw new Error('InfoMarket informa de que el servicio de registro no se encuentra disponible en este momento.');
+    }
+
+    const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+    const user = userCredential.user;
+
+    await updateProfile(user, { displayName });
+
+    if (!user.emailVerified) {
+      await sendEmailVerification(user);
+    }
+
+    return user;
   }
 
-  logout(): void {
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['/sign-in']);
+  async sendVerificationEmail(user: User): Promise<void> {
+    if (!this.auth) return;
+    await sendEmailVerification(user);
+  }
+
+  async signOut(): Promise<void> {
+    if (!this.auth) return;
+    await signOut(this.auth);
   }
 }
