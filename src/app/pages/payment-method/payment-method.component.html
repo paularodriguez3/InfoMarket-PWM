@@ -1,22 +1,31 @@
 <main>
-  <app-shopping-process/>
-  <div id="payment-method-container">
+  <app-shopping-process></app-shopping-process>
+
+  <!-- renombrado a payment-method-wrapper -->
+  <div id="payment-method-wrapper">
     <section id="payment-method">
       <h2>MÉTODO DE PAGO</h2>
+
       <div class="payment-option">
-        <input type="radio" id="credit" name="payment" checked>
+        <input type="radio" id="credit" name="payment" value="credit">
         <label for="credit">Tarjeta de crédito</label>
       </div>
+
       <div class="payment-option">
-        <input type="radio" id="bizum" name="payment">
+        <input type="radio" id="bizum" name="payment" value="bizum">
         <label for="bizum">Bizum</label>
       </div>
+
       <div class="payment-option">
-        <input type="radio" id="paypal" name="payment">
+        <input type="radio" id="paypal" name="payment" value="paypal">
         <label for="paypal">PayPal</label>
       </div>
+
+      <div id="payment-fields"></div>
+
       <button id="continue-button" class="pay-button">Pagar y finalizar</button>
     </section>
-    <app-shopping-info/>
+
+    <app-shopping-info></app-shopping-info>
   </div>
 </main>

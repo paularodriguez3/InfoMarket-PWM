@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService} from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,17 +11,47 @@ import { AuthService} from '../../services/auth.service';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
   email = '';
   password = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  private authService = inject(AuthService);
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const storedUser = localStorage.getItem('user');
+
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+
+      if (user.emailVerified) {
+        this.router.navigate(['/personal-profile']);
+      } else {
+        localStorage.removeItem('currentUser');
+      }
+    }
+  }
 
   async onSubmit(event: Event) {
     event.preventDefault();
 
     try {
-      await this.authService.signIn(this.email, this.password);
+      const user = await this.authService.signIn(this.email, this.password);
+
+      if (!user.emailVerified) {
+        alert('Debes verificar tu correo electrónico antes de iniciar sesión.');
+        return;
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify({
+        uid: user.uid,
+        email: user.email,
+        emailVerified: user.emailVerified
+      }));
+
+      alert('Inicio de sesión exitoso.');
+      this.router.navigate(['/personal-profile']);
     } catch (error: any) {
       if (error.code === 'auth/wrong-password') {
         alert('Contraseña incorrecta');

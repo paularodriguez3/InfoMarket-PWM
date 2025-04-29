@@ -1,22 +1,57 @@
 <main>
   <section id="main-title-wrapper">
     <h1 id="main-title">{{ titulo }}</h1>
-    <button id="filter-button"><i class='bx bx-filter-alt'></i> Ordenar y filtrar</button>
+    <button id="filter-button" (click)="toggleFilterMenu()">
+      <i class='bx bx-filter-alt'></i> Ordenar y filtrar
+    </button>
   </section>
-  <section id="filter-menu-wrapper" class="hidden-filter-menu">
-    <ul id ="filter-menu">
-      <li>Ordenar por</li>
-      <li>Precio</li>
-      <li>Marca</li>
-      <li>Color</li>
+
+  <section
+    id="filter-menu-wrapper"
+    [ngClass]="{
+    'visible-filter': isFilterMenuVisible,
+    'hidden-filter': !isFilterMenuVisible
+  }"
+  >
+  <ul id="filter-menu">
+      <li>
+        <label>Ordenar por:</label>
+        <select [(ngModel)]="ordenSeleccionado">
+          <option value="">Sin orden</option>
+          <option value="precioAsc">Precio: Menor a Mayor</option>
+          <option value="precioDesc">Precio: Mayor a Menor</option>
+          <option value="nombreAsc">Nombre: A-Z</option>
+          <option value="nombreDesc">Nombre: Z-A</option>
+        </select>
+      </li>
+      <li>
+        <label>Precio mínimo:</label>
+        <input type="number" [(ngModel)]="precioMin">
+      </li>
+      <li>
+        <label>Precio máximo:</label>
+        <input type="number" [(ngModel)]="precioMax">
+      </li>
+      <li>
+        <label>Marca:</label>
+        <input type="text" [(ngModel)]="marca">
+      </li>
+      <ng-container *ngFor="let filtro of filtrosCategoria[categoria] || []">
+        <li>
+          <label>{{ filtro }}:</label>
+          <input type="text" [(ngModel)]="caracteristicas[filtro]">
+        </li>
+      </ng-container>
     </ul>
-    <button id="apply-button"><i class='bx bx-filter-alt'></i> Aplicar</button>
+    <button id="apply-button" (click)="aplicarFiltros()">
+      <i class='bx bx-filter-alt'></i> Aplicar
+    </button>
   </section>
 
   <div>
     <div class="product-grid">
       <app-product
-        *ngFor="let product of products"
+        *ngFor="let product of filteredProducts"
         [product]="product"
         [imageUrl]="product.Imagen"
       ></app-product>
