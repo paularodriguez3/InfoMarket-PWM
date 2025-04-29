@@ -37,7 +37,7 @@ main {
   color: #1D1D1F;
 }
 
-#product-grid {
+.product-grid {
   justify-self: center;
   display: grid;
   padding: 20px;
@@ -103,7 +103,7 @@ main {
     font-size: 48px;
   }
 
-  #product-grid {
+  .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -113,7 +113,7 @@ main {
     font-size: 28px;
   }
 
-  #product-grid {
+  .product-grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }

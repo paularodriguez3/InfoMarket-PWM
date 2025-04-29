@@ -6,3 +6,4 @@ export interface Product {
   Precio : number,
   Caracteristicas: string[]
 }
+
