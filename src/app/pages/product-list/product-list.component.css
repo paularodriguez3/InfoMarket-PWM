@@ -82,6 +82,9 @@ main {
   position: absolute;
   right: 0;
   background-color: #F5F5F7;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  cursor: auto;
 }
 
 #filter-menu {
@@ -97,8 +100,22 @@ main {
   text-decoration: none;
 }
 
-@media(max-width: 991px) {
+#apply-button {
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  background-color: #1D1D1F;
+  color: white;
+  cursor: pointer;
+}
 
+#apply-button:hover {
+  background-color: #3D3D3D;
+}
+
+@media(max-width: 991px) {
   #main-title {
     font-size: 48px;
   }
