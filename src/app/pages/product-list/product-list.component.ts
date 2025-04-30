@@ -149,6 +149,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
       }
     }, 0);
   }
+
 }
 
 
