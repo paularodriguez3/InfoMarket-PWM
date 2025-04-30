@@ -1,10 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { ProductComponent } from '../../components/product/product.component';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {ProductComponent} from '../../components/product/product.component';
 import {NgClass, NgForOf} from '@angular/common';
-import { Product } from '../../models/product.model';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../../services/product.service';
-import { FormsModule } from '@angular/forms';
+import {Product} from '../../models/product.model';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {Subscription} from 'rxjs';
+import {ShoppingCartService} from '../../services/shopping-cart.service';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-product-list',
@@ -18,10 +20,11 @@ import { FormsModule } from '@angular/forms';
   ],
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
+  titulo= '';
+  private routeSub!: Subscription;
   filteredProducts: Product[] = [];
-  titulo = '';
   categoria: string = '';
 
   isFilterMenuVisible = false;
@@ -40,26 +43,31 @@ export class ProductListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private firebaseService: FirebaseService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   async ngOnInit(): Promise<void> {
-    const categoriaParam = this.route.snapshot.paramMap.get('categoria');
-    if (!categoriaParam) return;
 
-    this.categoria = categoriaParam;
+    this.routeSub = this.route.paramMap.subscribe(async params => {
+      const categoria = this.route.snapshot.paramMap.get('categoria');
+      console.log(categoria);
+      if (!categoria) return;
 
-    const doc = await this.productService.readDoc('productos', this.categoria);
-    this.titulo = doc.Nombre;
+      this.categoria = categoria;
 
-    const productos = await this.productService.getCategory(this.categoria);
-    for (const [id, productoData] of Object.entries(productos)) {
-      const data = productoData as Product;
-      const imageUrl = await this.productService.getImageUrl(data.Imagen);
-      this.products.push({ id, ...data, Imagen: imageUrl });
-    }
+      const doc = await this.firebaseService.readDoc('productos', categoria);
+      this.titulo = doc.Nombre;
 
-    this.filteredProducts = [...this.products];
+      const productos = await this.firebaseService.getCategory(this.categoria);
+      for (const [id, productoData] of Object.entries(productos)) {
+        const data = productoData as Product;
+        const imageUrl = await this.firebaseService.getImageUrl(data.Imagen);
+        this.products.push({ id, ...data, Imagen: imageUrl });
+      }
+
+      this.filteredProducts = [...this.products];
+    });
   }
 
   toggleFilterMenu() {
@@ -94,7 +102,7 @@ export class ProductListComponent implements OnInit {
     this.isFilterMenuVisible = false;
   }
 
-  aplicarOrdenacion() {
+  async aplicarOrdenacion() {
     switch (this.ordenSeleccionado) {
       case 'precioAsc':
         this.filteredProducts.sort((a, b) => a.Precio - b.Precio);
@@ -109,11 +117,25 @@ export class ProductListComponent implements OnInit {
         this.filteredProducts.sort((a, b) => b.Nombre.localeCompare(a.Nombre));
         break;
     }
+      const productos = await this.firebaseService.getCategory(this.categoria);
+      for (const [id, productoData] of Object.entries(productos)) {
+        const data = productoData as Product;
+        const imageUrl = await this.firebaseService.getImageUrl(data.Imagen);
+        this.products.push({ id, ...data, Imagen: imageUrl });
+      }
+    }
+
+  ngOnDestroy(): void {
+    if (this.routeSub) this.routeSub.unsubscribe();
   }
 
   onSee(product: Product) {
     localStorage.setItem("productoSeleccionado", JSON.stringify({ id: product.id, data: product, quantity: null }));
     this.router.navigate(['/product-details']);
+  }
+
+  onAddToCart(product: Product): void {
+    this.shoppingCartService.addToCart(product, 1);
   }
 
   @HostListener('document:click', ['$event'])
@@ -127,3 +149,6 @@ export class ProductListComponent implements OnInit {
     }, 0);
   }
 }
+
+
+

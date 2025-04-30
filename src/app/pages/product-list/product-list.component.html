@@ -54,6 +54,7 @@
         *ngFor="let product of filteredProducts"
         [product]="product"
         [imageUrl]="product.Imagen"
+        (addToCart)="onAddToCart(product)"
       ></app-product>
     </div>
   </div>
