@@ -50,6 +50,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   async ngOnInit(): Promise<void> {
 
     this.routeSub = this.route.paramMap.subscribe(async params => {
+      this.products = [];
       const categoria = this.route.snapshot.paramMap.get('categoria');
       console.log(categoria);
       if (!categoria) return;
