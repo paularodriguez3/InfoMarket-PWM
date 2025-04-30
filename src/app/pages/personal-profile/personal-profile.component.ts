@@ -1,17 +1,100 @@
-import {Component, inject} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
+import { Auth, signOut } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-personal-profile',
   standalone: true,
   templateUrl: './personal-profile.component.html',
-  styleUrl: './personal-profile.component.css'
+  styleUrl: './personal-profile.component.css',
+  imports: [CommonModule, FormsModule]
 })
-export class PersonalProfileComponent {
-  private router: Router = inject(Router);
-    ngOnInit() {
-      if (localStorage.getItem("user") === null) {
-        this.router.navigate(['sign-in'])
-      }
+export class PersonalProfileComponent implements OnInit {
+  username = '';
+  firstName = '';
+  lastName = '';
+  email = '';
+  phone = '';
+  uid = '';
+
+  private router = inject(Router);
+  private firestore = inject(Firestore, {optional: true});
+  private auth = inject(Auth, {optional: true});
+
+  ngOnInit() {
+    if (!this.firestore) {
+      console.warn('Firestore no está disponible. Perfil desactivado.');
+      return;
     }
+
+    const userData = localStorage.getItem('user');
+    if (!userData) {
+      this.router.navigate(['/sign-in']);
+      return;
+    }
+
+    const user = JSON.parse(userData);
+    this.uid = user.uid;
+    this.loadUserData();
+  }
+
+
+  async loadUserData() {
+    if (!this.firestore) return;
+
+    try {
+      const userRef = doc(this.firestore, 'users', this.uid);
+      const snapshot = await getDoc(userRef);
+
+      if (snapshot.exists()) {
+        const data = snapshot.data();
+        this.username = data['username'] || '';
+        this.firstName = data['firstName'] || '';
+        this.lastName = data['lastName'] || '';
+        this.email = data['email'] || '';
+        this.phone = data['phone'] || '';
+      } else {
+        alert('No se encontraron datos del usuario.');
+      }
+    } catch (err) {
+      console.error('Error al cargar el perfil:', err);
+    }
+  }
+
+
+  async onSave() {
+    if (!this.firestore) {
+      alert('No se puede guardar: Firestore no está disponible.');
+      return;
+    }
+
+    try {
+      const userRef = doc(this.firestore, 'users', this.uid);
+      await updateDoc(userRef, {
+        username: this.username,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        phone: this.phone
+      });
+
+      alert('Datos de perfil actualizados.');
+    } catch (err) {
+      console.error('Error al guardar el perfil:', err);
+    }
+  }
+
+
+  async logout() {
+    try {
+      if (this.auth) await signOut(this.auth);
+      localStorage.removeItem('user');
+      this.router.navigate(['/']);
+    } catch (err) {
+      console.error('Error al cerrar sesión:', err);
+    }
+  }
 }
