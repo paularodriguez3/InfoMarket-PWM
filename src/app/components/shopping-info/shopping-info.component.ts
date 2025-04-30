@@ -1,11 +1,34 @@
 import { Component } from '@angular/core';
-
+import { OnInit } from '@angular/core';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
+import {ShoppingCartItem} from '../../models/shopping-cart-item.model';
+import {NgForOf} from '@angular/common';
+import {ProductInfoComponent} from '../product-info/product-info.component';
 @Component({
   selector: 'app-shopping-info',
   standalone: true,
   templateUrl: './shopping-info.component.html',
+  imports: [
+    NgForOf,
+    ProductInfoComponent
+  ],
   styleUrl: './shopping-info.component.css'
 })
-export class ShoppingInfoComponent {
+export class ShoppingInfoComponent implements OnInit {
+  shoppingCart: ShoppingCartItem[] = [];
+
+  constructor(private shoppingCartService: ShoppingCartService) {}
+
+  ngOnInit(): void {
+    this.shoppingCart = this.shoppingCartService.getCart();
+  }
+
+  calculateTotalPrice(): number {
+    let total:number = 0;
+    for (let item of this.shoppingCart) {
+      total += item.product.Precio * item.quantity;
+    }
+    return total;
+  }
 
 }
