@@ -118,7 +118,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.filteredProducts.sort((a, b) => b.Nombre.localeCompare(a.Nombre));
         break;
     }
+
       const productos = await this.firebaseService.getCategory(this.categoria);
+      this.products = [];
       for (const [id, productoData] of Object.entries(productos)) {
         const data = productoData as Product;
         const imageUrl = await this.firebaseService.getImageUrl(data.Imagen);
