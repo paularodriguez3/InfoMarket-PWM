@@ -22,7 +22,7 @@
           <div class="login-form">
             <h1>Entrega del paquete</h1>
             <div class="map-foto-container">
-              <img src="../../assets/images/Tiendas-en-las-que-operamos.png" alt="Mapa">
+              <img *ngIf="mapImageUrl" [src]="mapImageUrl" alt="Mapa">
             </div>
           </div>
         </div>
