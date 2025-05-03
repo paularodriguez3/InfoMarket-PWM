@@ -144,7 +144,6 @@ body {
   justify-content: space-evenly;
   padding-top: 1.5%;
   padding-bottom: 4%;
-  padding-inline: 5%;
   background-color: #F5F5F7;
 }
 
@@ -190,6 +189,15 @@ body {
   font-size: 48px;
   color: #F5F5F7;
   min-width: 100%;
+}
+
+#header-menu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #F5F5F7;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .list{
