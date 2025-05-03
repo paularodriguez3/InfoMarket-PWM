@@ -6,18 +6,14 @@
   box-sizing: border-box;
 }
 
-body, main {
-  background-color: #FAFAFC;
-  font-family: 'Roboto', sans-serif;
-}
-
 main {
   flex: 1;
   margin-top: 4%;
   position: relative;
   overflow-x: hidden;
+  background-color: #FAFAFC;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 #main-title {
   font-size: 72px;
@@ -31,7 +27,6 @@ main {
   justify-content: space-between;
   color: #1D1D1F;
 }
-
 
 #filter-button {
   border-radius: 10px;
@@ -48,7 +43,6 @@ main {
 #filter-button:hover {
   background-color: #D9D9D9;
 }
-
 
 .product-grid {
   justify-self: center;
