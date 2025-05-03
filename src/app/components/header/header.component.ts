@@ -1,18 +1,27 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {FirebaseService} from '../../services/firebase.service';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   templateUrl: './header.component.html',
-  imports: [RouterModule],
+  imports: [RouterModule, NgIf],
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @ViewChild('searchBar') searchRef!: ElementRef;
   @ViewChild('inputBar') inputRef!: ElementRef;
 
   isSearchActive = false;
+  logoUrl: string = '';
+
+  constructor(private firebaseService: FirebaseService) {}
+
+  async ngOnInit() {
+    this.logoUrl = await this.firebaseService.getImageUrl('logo/infomarket_logo.png');
+  }
 
   toggleSearch(): void {
     const searchEl = this.searchRef.nativeElement as HTMLElement;

@@ -15,29 +15,18 @@ body {
 
 main {
   flex: 1;
-  background-color: #FAFAFC;
-  padding-top: 120px; /* espacio para header fijo */
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #FAFAFC;
-  z-index: 1000;
+  padding-top: 2%;
 }
 
 /* ─── WRAPPER GENERAL (igual que shipping-method-wrapper) ───── */
 #billing-shopping-wrapper {
   width: 90%;
-  max-width: 1100px;      /* mismo max-width que en OrderReview y PaymentMethod */
   margin: 0 auto;         /* centrado horizontal */
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 5%;
-  padding-bottom: 70px;    /* mismo padding inferior */
+  padding-bottom: 15px;    /* mismo padding inferior */
   font-family: 'SF Pro Display', sans-serif;
 }
 

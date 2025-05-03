@@ -3,7 +3,7 @@
     <article id="nav-top">
       <div id="logo-searchbar">
         <a id="header-logo" routerLink="/">
-          <img src="assets/icons/header/infomarket_logo.png" width="92px" height="92px" alt="">
+          <img *ngIf="logoUrl" [src]="logoUrl" width="92" height="92" alt="Infomarket logo" />
         </a>
       </div>
       <div id="user-cart">

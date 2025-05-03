@@ -1,34 +1,70 @@
 import {
   AfterViewInit,
   Component,
-  ElementRef,
+  ElementRef, OnInit,
   Renderer2,
   ViewChild
 } from '@angular/core';
+import {NgForOf, NgIf} from '@angular/common';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
+  imports: [
+    NgIf,
+    NgForOf
+  ],
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
 
   private observer!: IntersectionObserver;
   private refreshInterval: any;
   private active = 0;
   private lengthItems = 0;
+  ps5videoUrl: string = '';
+  laptopvideoUrl: string = '';
+  smartphonevideoUrl: string = '';
+  gamingvideoUrl: string = '';
+  fridgevideoUrl: string = '';
+  televisionvideoUrl: string = '';
+  videosReady = false;
+  marcasUrls: string[] = [];
+
 
   @ViewChild('sliderContainer') sliderContainer!: ElementRef;
   @ViewChild('overlayContainer') overlayContainer!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private firebaseService: FirebaseService) {}
+
+  async ngOnInit() {
+    this.ps5videoUrl = await this.firebaseService.getImageUrl('videos/ps5_controller.mp4');
+    this.laptopvideoUrl = await this.firebaseService.getImageUrl('videos/laptop.mp4');
+    this.smartphonevideoUrl = await this.firebaseService.getImageUrl('videos/smartphones.mp4');
+    this.gamingvideoUrl = await this.firebaseService.getImageUrl('videos/gaming.mp4');
+    this.fridgevideoUrl = await this.firebaseService.getImageUrl('videos/fridge.mp4');
+    this.televisionvideoUrl = await this.firebaseService.getImageUrl('videos/television.mp4');
+    this.videosReady = true;
+
+    setTimeout(() => {
+      this.setupSlider();
+      this.setupAutoAdvance();
+      this.setupHoverPlay();
+    }, 0);
+
+    const filenames = ['amd.svg', 'apple.svg', 'asus.svg', 'hp.svg', 'msi.svg', 'playstation.svg', 'samsung.svg', 'xbox.svg'];
+
+    const promises = filenames.map(name =>
+      this.firebaseService.getImageUrl(`marcas/${name}`)
+    );
+
+    this.marcasUrls = await Promise.all(promises);
+  }
 
   ngAfterViewInit(): void {
     this.setupObserver();
-    this.setupSlider();
-    this.setupAutoAdvance();
-    this.setupHoverPlay();
   }
 
   setupObserver(): void {
@@ -100,10 +136,8 @@ export class HomeComponent implements AfterViewInit {
 
   setupAutoAdvance(): void {
     const next = document.getElementById('next')!;
-    this.refreshInterval = setInterval(() => next.click(), 3000);
+    this.refreshInterval = setInterval(() => next.click(), 2500);
   }
-
-
 }
 
 

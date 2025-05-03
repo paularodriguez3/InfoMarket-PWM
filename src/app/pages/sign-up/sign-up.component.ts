@@ -3,13 +3,14 @@ import {
   ElementRef,
   ViewChild,
   AfterViewInit,
-  inject
+  inject, OnInit
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,10 +19,11 @@ import { UserService } from '../../services/user.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent implements AfterViewInit {
+export class SignUpComponent implements AfterViewInit, OnInit {
   email = '';
   password = '';
   username = '';
+  logoUrl= '';
 
   @ViewChild('usernameRequirements') usernameReq?: ElementRef;
   @ViewChild('passwordRequirements') passwordReq?: ElementRef;
@@ -29,9 +31,13 @@ export class SignUpComponent implements AfterViewInit {
   private authService = inject(AuthService);
   private userService = inject(UserService);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private firebaseService: FirebaseService) {}
 
   ngAfterViewInit(): void {}
+
+  async ngOnInit(): Promise<void> {
+    this.logoUrl = await this.firebaseService.getImageUrl('logo/infomarket_logo_mini.png');
+  }
 
   showElement(el?: ElementRef) {
     if (el?.nativeElement) {

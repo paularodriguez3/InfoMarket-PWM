@@ -6,17 +6,17 @@
 
   <section class="features-section">
     <div class="feature-item">
-      <img src="../assets/images/about-us/icon-hardware.png" alt="Hardware Icono">
+      <img *ngIf="hardwareIconUrl" [src]="hardwareIconUrl" alt="Hardware Icono">
       <h2>Hardware de alto rendimiento</h2>
       <p>Ofrecemos componentes y equipos de última generación para gamers, profesionales y entusiastas.</p>
     </div>
     <div class="feature-item">
-      <img src="../assets/images/about-us/icon-software.png" alt="Software Icono">
+      <img *ngIf="hardwareIconUrl" [src]="softwareIconUrl" alt="Software Icono">
       <h2>Software especializado</h2>
       <p>Desde sistemas operativos hasta herramientas de productividad, tenemos todo lo que necesitas.</p>
     </div>
     <div class="feature-item">
-      <img src="../assets/images/about-us/icon-support.png" alt="Soporte Icono">
+      <img *ngIf="hardwareIconUrl" [src]="supportIconUrl" alt="Soporte Icono">
       <h2>Soporte técnico</h2>
       <p>Nuestro equipo de expertos está siempre disponible para ayudarte con cualquier consulta o problema.</p>
     </div>
@@ -25,7 +25,7 @@
   <section class="about-section">
     <h2>Nuestra historia</h2>
     <p>Fundada en 2025, Infomarket nació con la misión de ser el referente en tecnología informática. Estamos creciendo gracias a nuestra pasión por la innovación y nuestro compromiso con la calidad.</p>
-    <img src="../assets/images/about-us/about-us-history.png" alt="Nuestra Historia">
+    <img *ngIf="aboutUs" [src]="aboutUs" alt="Nuestra Historia">
   </section>
 
   <section class="values-section">

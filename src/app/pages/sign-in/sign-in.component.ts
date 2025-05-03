@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,19 +15,22 @@ import { AuthService } from '../../services/auth.service';
 export class SignInComponent implements OnInit {
   email = '';
   password = '';
+  logoUrl= '';
 
   private authService = inject(AuthService);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private firebaseService: FirebaseService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.logoUrl = await this.firebaseService.getImageUrl('logo/infomarket_logo_mini.png');
+
     const storedUser = localStorage.getItem('user');
 
     if (storedUser) {
       const user = JSON.parse(storedUser);
 
       if (user.emailVerified) {
-        this.router.navigate(['/personal-profile']);
+        await this.router.navigate(['/personal-profile']);
       } else {
         localStorage.removeItem('currentUser');
       }
