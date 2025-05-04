@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Firestore, doc, getDoc, updateDoc } from '@angular/fire/firestore';
 import { Auth, signOut } from '@angular/fire/auth';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-personal-profile',
@@ -13,16 +14,19 @@ import { Auth, signOut } from '@angular/fire/auth';
   imports: [CommonModule, FormsModule]
 })
 export class PersonalProfileComponent implements OnInit {
-  username = '';
-  firstName = '';
-  lastName = '';
-  email = '';
-  phone = '';
-  uid = '';
+  user: User = {
+    uid: '',
+    email: '',
+    username: '',
+    emailVerified: false,
+    firstName: '',
+    lastName: '',
+    phone: ''
+  };
 
   private router = inject(Router);
-  private firestore = inject(Firestore, {optional: true});
-  private auth = inject(Auth, {optional: true});
+  private firestore = inject(Firestore, { optional: true });
+  private auth = inject(Auth, { optional: true });
 
   ngOnInit() {
     if (!this.firestore) {
@@ -36,26 +40,27 @@ export class PersonalProfileComponent implements OnInit {
       return;
     }
 
-    const user = JSON.parse(userData);
-    this.uid = user.uid;
+    const localUser = JSON.parse(userData);
+    this.user.uid = localUser.uid;
+    this.user.email = localUser.email;
+    this.user.emailVerified = localUser.emailVerified;
+
     this.loadUserData();
   }
-
 
   async loadUserData() {
     if (!this.firestore) return;
 
     try {
-      const userRef = doc(this.firestore, 'users', this.uid);
+      const userRef = doc(this.firestore, 'users', this.user.uid);
       const snapshot = await getDoc(userRef);
 
       if (snapshot.exists()) {
-        const data = snapshot.data();
-        this.username = data['username'] || '';
-        this.firstName = data['firstName'] || '';
-        this.lastName = data['lastName'] || '';
-        this.email = data['email'] || '';
-        this.phone = data['phone'] || '';
+        const data = snapshot.data() as Partial<User>;
+        this.user = {
+          ...this.user,
+          ...data
+        };
       } else {
         alert('No se encontraron datos del usuario.');
       }
@@ -64,7 +69,6 @@ export class PersonalProfileComponent implements OnInit {
     }
   }
 
-
   async onSave() {
     if (!this.firestore) {
       alert('No se puede guardar: Firestore no está disponible.');
@@ -72,13 +76,13 @@ export class PersonalProfileComponent implements OnInit {
     }
 
     try {
-      const userRef = doc(this.firestore, 'users', this.uid);
+      const userRef = doc(this.firestore, 'users', this.user.uid);
       await updateDoc(userRef, {
-        username: this.username,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        phone: this.phone
+        username: this.user.username,
+        firstName: this.user.firstName,
+        lastName: this.user.lastName,
+        email: this.user.email,
+        phone: this.user.phone
       });
 
       alert('Datos de perfil actualizados.');
@@ -86,7 +90,6 @@ export class PersonalProfileComponent implements OnInit {
       console.error('Error al guardar el perfil:', err);
     }
   }
-
 
   async logout() {
     try {

@@ -3,4 +3,7 @@ export interface User{
   email: string;
   username: string;
   emailVerified: boolean;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
 }
