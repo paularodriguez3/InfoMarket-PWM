@@ -159,12 +159,12 @@ export class SignUpComponent implements AfterViewInit, OnInit {
       const user = await this.authService.registerUser(this.email, this.password, this.username);
 
       if (user) {
-        await this.userService.saveUserData(
-          user.uid,
-          user.email!,
-          this.username,
-          user.emailVerified
-        );
+        await this.userService.saveUserData({
+          uid: user.uid,
+          email: user.email!,
+          username: this.username,
+          emailVerified: user.emailVerified
+        });
 
         alert('Usuario creado exitosamente. Se ha enviado un correo de verificación.');
         this.router.navigate(['/sign-in']);
